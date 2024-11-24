@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@keyframes slideDown {
+    0% {
+      top: -60px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  
+  .animate-slideDown {
+    animation: slideDown 0.5s ease-out forwards;
+  }
+  @keyframes gradientAnimation {
+    0% {
+      background: linear-gradient(45deg, #f0f4f8, #e0e8f1);
+    }
+    50% {
+      background: linear-gradient(45deg, #e0e8f1, #f0f4f8);
+    }
+    100% {
+      background: linear-gradient(45deg, #f0f4f8, #e0e8f1);
+    }
+  }
+  
+  .animate-gradient {
+    animation: gradientAnimation 8s ease infinite;
+  }
+  
