@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Store from "./pages/Store";
 import About from './pages/About';
 import Contact from './pages/Contacts';
+import StoreStatus from './pages/Locations';
 
 
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path:"/contact",
     element:<Contact/>
+  },
+  {
+    path:"/location",
+    element:<StoreStatus/>
   }
 ]);
 

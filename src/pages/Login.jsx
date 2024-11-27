@@ -65,7 +65,7 @@ function Login() {
     <div className="bg-gradient-to-r from-red-100 to-red-200 h-screen w-full flex flex-col">
       <PageNav handleLogout={handleLogout} userName={userName} />
       <div className="flex-grow flex justify-center items-center">
-        <div className="h-[500px] w-[600px] sm:w-[90%] md:w-[80%] lg:w-[60%] bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="h-[530px] w-[600px] sm:w-[90%] md:w-[80%] lg:w-[60%] bg-white shadow-lg rounded-lg overflow-hidden">
           <div className="w-full h-[40px] bg-gray-700 text-green-500 font-bold flex items-center justify-center">
             {isLogin ? "Login with Your Credentials" : "Sign Up with Your Details"}
           </div>
