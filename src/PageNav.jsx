@@ -1,52 +1,63 @@
 import { NavLink } from "react-router-dom";
-import PropTypes from "prop-types";  // Import PropTypes
-import { AiFillHome } from "react-icons/ai"; // Import home icon
+import PropTypes from "prop-types";
+import { AiFillHome } from "react-icons/ai";
+import { FaInfoCircle, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 function PageNav({ handleLogout, userName }) {
   return (
-    <nav className="flex items-center justify-between p-4 bg-gray-800">
-      <NavLink to="/">
-        <img src="/logo.png" className="h-[60px] w-[130px]" alt="Logo" />
+    <nav className="flex items-center justify-between p-2 bg-gray-800">
+      {/* Logo */}
+      <NavLink to="/" className="flex-shrink-0">
+        <img src="/logo.png" className="h-10 w-auto md:h-12" alt="Logo" />
       </NavLink>
-      <ul className="flex gap-4 items-center text-white">
+
+      {/* Navigation Links */}
+      <ul className="flex items-center gap-2 text-white text-sm md:text-base flex-wrap">
+        {/* Home */}
         <li>
-          <NavLink to="/" className="hover:text-blue-500 flex items-center gap-2">
-            <AiFillHome className="text-2xl" /> {/* Home Icon */}
-            <h4 className="text-xl font-sans hidden md:block">Home</h4> {/* Text hidden on small screens */}
+          <NavLink to="/" className="hover:text-blue-500 flex items-center gap-1">
+            <AiFillHome className="text-lg md:text-xl" />
+            <span className="hidden sm:inline">Home</span>
           </NavLink>
         </li>
+        {/* About */}
         <li>
-          <NavLink to="/about" className="hover:text-blue-500">
-            <h4 className="text-xl font-sans">About</h4>
+          <NavLink to="/about" className="hover:text-blue-500 flex items-center gap-1">
+            <FaInfoCircle className="text-lg md:text-xl" />
+            <span className="hidden sm:inline">About</span>
           </NavLink>
         </li>
+        {/* Contact */}
         <li>
-          <NavLink to="/contact" className="text-xl font-sans hover:text-blue-500">
-            Contact
+          <NavLink to="/contact" className="hover:text-blue-500 flex items-center gap-1">
+            <FaPhoneAlt className="text-lg md:text-xl" />
+            <span className="hidden sm:inline">Contact</span>
           </NavLink>
         </li>
+        {/* Locations */}
         <li>
-          <NavLink to="/location" className="text-xl font-sans hover:text-blue-500">
-            Locations
+          <NavLink to="/location" className="hover:text-blue-500 flex items-center gap-1">
+            <FaMapMarkerAlt className="text-lg md:text-xl" />
+            <span className="hidden sm:inline">Locations</span>
           </NavLink>
         </li>
-        {/* Show the user's name when logged in */}
+        {/* User Name */}
         {userName && (
           <li>
-            <span className="text-xl font-semibold text-yellow-400 bg-gray-700 px-4 py-2 rounded-full shadow-lg">
+            <span className="text-xs md:text-sm font-semibold text-yellow-400 bg-gray-700 px-2 py-1 rounded-full shadow-lg truncate max-w-[80px] sm:max-w-none">
               {userName}
             </span>
           </li>
         )}
-        {/* Logout Button as part of the ul */}
+        {/* Logout Button */}
         {userName && (
           <li>
-            <div
-              className="text-white text-lg bg-blue-500 rounded-lg px-4 py-2 cursor-pointer hover:bg-blue-600 transition-all duration-200"
+            <button
+              className="text-xs md:text-sm bg-blue-500 rounded-lg px-2 py-1 hover:bg-blue-600 transition-all flex-shrink-0"
               onClick={handleLogout}
             >
               Logout
-            </div>
+            </button>
           </li>
         )}
       </ul>
@@ -54,7 +65,6 @@ function PageNav({ handleLogout, userName }) {
   );
 }
 
-// Add prop types validation
 PageNav.propTypes = {
   handleLogout: PropTypes.func.isRequired,
   userName: PropTypes.string,
