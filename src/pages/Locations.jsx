@@ -78,7 +78,7 @@ const StoreStatus = () => {
             return (
               <li
                 key={store.id}
-                className={`p-6 rounded-lg shadow-md transform transition-transform hover:scale-105 ${isOpen ? "bg-gradient-to-r from-green-400 to-green-600 text-white" : "bg-gradient-to-r from-gray-300 to-gray-400 text-gray-800"}`}
+                className={`p-6 rounded-lg shadow-md transform transition-transform hover:scale-105 ${isOpen ? "bg-gradient-to-r from-green-300 to-green-400 text-orange" : "bg-gradient-to-r from-gray-300 to-gray-400 text-gray-800"}`}
               >
                 <a
                   href={store.mapLink} // Linking to Google Maps
