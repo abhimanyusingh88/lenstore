@@ -12,7 +12,7 @@ function PageNav({ handleLogout, userName }) {
       </NavLink>
 
       {/* Navigation Links */}
-      <ul className="flex items-center gap-2 text-white text-sm md:text-base flex-wrap">
+      <ul className="flex items-center gap-4 text-white text-sm md:text-base">
         {/* Home */}
         <li>
           <NavLink to="/" className="hover:text-blue-500 flex items-center gap-1">
@@ -44,7 +44,7 @@ function PageNav({ handleLogout, userName }) {
         {/* User Name */}
         {userName && (
           <li>
-            <span className="text-xs md:text-sm font-semibold text-yellow-400 bg-gray-700 px-2 py-1 rounded-full shadow-lg truncate max-w-[80px] sm:max-w-none">
+            <span className="text-sm md:text-base font-semibold text-yellow-400 bg-gray-700 px-3 py-1 rounded-full shadow-lg truncate max-w-[80px] sm:max-w-none">
               {userName}
             </span>
           </li>
@@ -53,7 +53,7 @@ function PageNav({ handleLogout, userName }) {
         {userName && (
           <li>
             <button
-              className="text-xs md:text-sm bg-blue-500 rounded-lg px-2 py-1 hover:bg-blue-600 transition-all flex-shrink-0"
+              className="text-xs md:text-sm bg-blue-500 rounded-lg px-3 py-1 hover:bg-blue-600 transition-all"
               onClick={handleLogout}
             >
               Logout
